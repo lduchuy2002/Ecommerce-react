@@ -1,0 +1,39 @@
+.detail-slider {
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  object-fit: contain;
+  margin-bottom: 20px;
+  align-items: center;
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  img {
+    max-width: 90%;
+    animation: appear 2s;
+    object-fit: contain;
+  }
+  &__params {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+    img {
+      transition: 0.2s;
+      max-width: 100px;
+      border: 1px solid rgb(155, 149, 149);
+      object-fit: contain;
+    }
+    &-param:not(:first-child) {
+      margin-left: 4px;
+    }
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

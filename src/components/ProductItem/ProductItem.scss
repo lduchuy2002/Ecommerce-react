@@ -1,0 +1,101 @@
+$badge-color: #cb1c22;
+$border: #dee2e6;
+.product-item {
+  border: 1px solid lightgrey;
+  height: 420px;
+  margin: 0 auto;
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  text-decoration: none;
+  @media (max-width: 800px) {
+    height: 500px;
+  }
+  &__top {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &--image {
+      margin: 0 auto;
+      display: inline-block;
+      transition: 0.5s;
+      object-fit: contain;
+      width: 90%;
+    }
+    &--badge {
+      position: absolute;
+      left: 2px;
+      bottom: 10px;
+      font-size: 12px;
+      background-color: $badge-color;
+      text-align: center;
+      padding: 3px 6px;
+      font-weight: 600;
+      color: whitesmoke;
+      border-radius: 5px;
+    }
+  }
+
+  &__bottom {
+    &--name {
+      font-weight: 700;
+      font-size: 16px;
+      max-width: 90%;
+      margin: 5px auto 5px auto;
+      color: #474c51;
+    }
+    &--price {
+      background-color: $badge-color;
+      text-align: center;
+      padding: 3px 11px;
+      font-weight: 600;
+      color: whitesmoke;
+      border-radius: 10px;
+      font-size: 18px;
+      margin: 10px 0 15px 0;
+      display: inline-block;
+      position: relative;
+      &:after {
+        content: "đ";
+        top: 0;
+        right: 0px;
+        bottom: 0;
+        margin: auto 0;
+        font-size: 12px;
+      }
+    }
+    &--params {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 15px;
+      color: #4a5157;
+      .param {
+        margin: 0 7px 7px 7px;
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  #buy {
+    max-width: 150px;
+    margin: 0 auto;
+    background-color: $badge-color;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 4px 2px;
+    border-radius: 5px;
+    color: whitesmoke;
+    display: none;
+    transition: 0.5s;
+    &:hover {
+      background-color: #992529;
+    }
+  }
+  &:hover #buy {
+    display: block;
+  }
+  &:hover img {
+    transform: scale(1.02);
+  }
+}

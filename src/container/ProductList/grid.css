@@ -1,0 +1,31 @@
+.grid {
+  margin: 0 auto;
+  width: 1200px;
+  display: grid;
+  grid-gap: 5px 5px;
+  grid-template-columns: 295px 295px 295px 295px;
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .grid {
+    width: 960px;
+    grid-template-columns: 315px 315px 315px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .grid {
+    width: 720px;
+    grid-template-columns: 235px 235px 235px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .grid {
+    width: 100%;
+    grid-gap: 15px 15px;
+    grid-template-columns: 49.5% 49.5%;
+  }
+}

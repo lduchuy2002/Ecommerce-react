@@ -1,0 +1,13 @@
+.body-page {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+}
+@media (max-width: 900px) {
+  .body-page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

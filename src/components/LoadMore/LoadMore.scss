@@ -1,0 +1,16 @@
+.load-more {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 20px;
+  background-color: #cb1c22;
+  color: white;
+  font-weight: bold;
+  padding: 4px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 10px;
+  transition: 0.8s;
+  &:hover {
+    background-color: #a1383b;
+  }
+}

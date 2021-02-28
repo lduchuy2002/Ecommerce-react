@@ -1,0 +1,48 @@
+$filter-font-size: 17px;
+
+.filter {
+  max-width: 1200px;
+  display: flex;
+  font-size: $filter-font-size;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: 700;
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  @media (max-width: 800px) {
+    font-size: 1rem;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    &--option {
+      margin-left: 10px;
+      color: red;
+      &-sort {
+        @media (max-width: 600px) {
+          width: 100px;
+        }
+      }
+      @media (max-width: 600px) {
+        margin-left: 5px;
+      }
+      &:hover:not(:nth-child(6)) {
+        color: blue;
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  .ram {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+  }
+}

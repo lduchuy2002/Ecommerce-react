@@ -1,0 +1,13 @@
+.add-to-cart {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  height: 50px;
+  justify-content: center;
+  background-color: #cb1c22;
+  color: white;
+  .fa-shopping-cart {
+    margin-right: 5px;
+  }
+}

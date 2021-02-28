@@ -1,0 +1,33 @@
+.table-detail {
+  max-width: 600px;
+  font-size: 18px;
+  display: inline-block;
+  table-layout: fixed;
+  margin: 0 auto;
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  @media (max-width: 600px) {
+    max-width: 500px;
+  }
+  tr,
+  td {
+    text-align: start;
+    border: 1px solid rgb(207, 201, 201);
+  }
+  tr {
+    max-width: 600px;
+    .left {
+      width: 200px;
+      font-weight: 600;
+    }
+    .right {
+      font-weight: 100;
+      max-width: 400px;
+      padding-left: 5px;
+      word-wrap: break-word;
+      word-break: break-all;
+    }
+  }
+  td {
+    padding: 2px 0;
+  }
+}
