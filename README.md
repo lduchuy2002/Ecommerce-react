@@ -1,6 +1,7 @@
 # Introduce
 
-App có các chức năng render sản phẩm, mua, đăng nhập, đăng kí, xem tin tức, bình luận, tìm kiếm
+App có các chức năng render sản phẩm, mua, đăng nhập, đăng kí, xem tin tức, bình luận, tìm kiếm ,
+sắp xếp, lọc sản phẩm
 
 # Getting Started with Create React App
 
