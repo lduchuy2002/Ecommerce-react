@@ -1,3 +1,7 @@
+# Introduce
+
+App có các chức năng render sản phẩm, mua, đăng nhập, đăng kí, xem tin tức, bình luận, tìm kiếm
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
