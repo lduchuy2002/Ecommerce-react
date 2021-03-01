@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import "./grid.css";
 
-import FilterLaptop from "../../components/FilterLaptop/FilterLaptop";
+import FilterProduct from "../../components/FilterProduct/FilterProduct";
 import ProductItem from "../../components/ProductItem/ProductItem";
 import LoadMore from "../../components/LoadMore/LoadMore";
 
-import { LAPTOP_DATA_LENGTH, BASE_FILTER_VALUE } from "../../constant/StaticConst";
+import { BASE_FILTER_VALUE } from "../../constant/StaticConst";
 
-function ProductList({ getAll, route }) {
+function ProductList({ getAll, route, DATA_LENGTH }) {
   const [productData, setProductData] = useState([]);
   const [pageFetch, setPageFetch] = useState(1);
   const [isFilter, setIsFilter] = useState(false);
@@ -44,7 +44,7 @@ function ProductList({ getAll, route }) {
     reFetchProductData();
   };
 
-  const HandlePageFetch = () => pageFetch <= LAPTOP_DATA_LENGTH && setPageFetch(pageFetch + 1);
+  const HandlePageFetch = () => pageFetch <= DATA_LENGTH && setPageFetch(pageFetch + 1);
 
   useEffect(() => {
     const fetchProductData = async () => {
@@ -70,11 +70,11 @@ function ProductList({ getAll, route }) {
 
   return (
     <div className="container">
-      <FilterLaptop
+      <FilterProduct
         handleFilter={handleFilter}
         handleFilterRam={handleFilterRam}
         handleSort={handleSort}
-      ></FilterLaptop>
+      ></FilterProduct>
       <div className="grid">
         {productData.map(item => (
           <ProductItem
