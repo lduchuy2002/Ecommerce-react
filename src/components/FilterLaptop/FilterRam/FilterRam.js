@@ -1,9 +1,7 @@
 import React, { useRef } from "react";
 import "./FilterRam.scss";
-import LaptopRamContext from "../../../context/LaptopRamContext";
-function FilterRam() {
-  const RamContext = React.useContext(LaptopRamContext);
-  const { handleFilterRam } = RamContext;
+
+function FilterRam({ handleFilterRam }) {
   const ramValueOnChange = useRef(null);
   const debouce = event => {
     if (ramValueOnChange.current) {

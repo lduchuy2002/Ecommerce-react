@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./filterLaptop.scss";
 import FilterRam from "./FilterRam/FilterRam";
 
-function FilterLaptop({ handleFilter, handleSort }) {
+function FilterLaptop({ handleFilter, handleSort, handleFilterRam }) {
   const [isDisplayFilterRam, setDisplayFilterRam] = useState(false);
 
   return (
@@ -52,13 +52,11 @@ function FilterLaptop({ handleFilter, handleSort }) {
             Trên 25 triệu
           </li>
           <li className="filter__list--option dropdown">
-            <span onClick={() => setDisplayFilterRam(!isDisplayFilterRam)}>
-              Bộ lọc
-            </span>{" "}
+            <span onClick={() => setDisplayFilterRam(!isDisplayFilterRam)}>Bộ lọc</span>{" "}
             <i className="fas fa-caret-down"></i>
             {isDisplayFilterRam && (
               <span className="ram" style={{ zIndex: 2 }}>
-                <FilterRam />
+                <FilterRam handleFilterRam={handleFilterRam} />
               </span>
             )}
           </li>

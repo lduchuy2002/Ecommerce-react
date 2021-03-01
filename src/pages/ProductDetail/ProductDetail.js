@@ -4,26 +4,13 @@ import "./ProductDetail.scss";
 
 import TopDetail from "../../components/TopDetail/TopDetail";
 import BodyDetail from "../../components/BodyDetail/BodyDetail";
-import AdjustItem from "../../components/AdjustItem/AdjustItem";
-import AddToCard from "../../components/AddToCart/AddToCart";
 
 import ProductApi from "../../api/productApi";
-import DetailSliderContext from "../../context/DetailContext";
 
 function ProductDetail() {
   const [productData, setProductData] = useState(undefined);
-  const [quantity, setQuantity] = useState(1);
-  const { id } = useParams();
 
-  const adjustQuantity = type => {
-    if (type === "+") {
-      setQuantity(quantity + 1);
-    } else {
-      if (quantity !== 1) {
-        setQuantity(quantity - 1);
-      }
-    }
-  };
+  const { id } = useParams();
 
   useEffect(() => {
     const fetchSingleData = async () => {
@@ -45,11 +32,6 @@ function ProductDetail() {
       />
 
       <BodyDetail data={productData} />
-
-      <div className="wrapper-compo">
-        <AdjustItem quantity={quantity} handleFunction={adjustQuantity}></AdjustItem>
-        <AddToCard />
-      </div>
     </div>
   );
 }

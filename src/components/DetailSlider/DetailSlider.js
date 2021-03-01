@@ -12,20 +12,17 @@ function DetailSlider({ images }) {
 
       <div className="detail-slider__params">
         {images &&
-          images.map((image, index) => {
-            console.log(index);
-            return (
-              <img
-                src={image}
-                alt="image"
-                onClick={() => onSetSlide(index)}
-                className="detail-slider__params-image"
-                style={{
-                  border: slide === `${index}` && "  2px solid #cb1c22",
-                }}
-              ></img>
-            );
-          })}
+          images.map((image, index) => (
+            <img
+              src={image}
+              alt="image"
+              onClick={() => onSetSlide(index)}
+              className="detail-slider__params-image"
+              style={{
+                border: slide.toString() === `${index}` && "  2px solid #cb1c22",
+              }}
+            ></img>
+          ))}
       </div>
     </div>
   );
