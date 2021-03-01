@@ -23,7 +23,7 @@
       border: 1px solid rgb(155, 149, 149);
       object-fit: contain;
     }
-    &-param:not(:first-child) {
+    &-image:not(:first-child) {
       margin-left: 4px;
     }
   }

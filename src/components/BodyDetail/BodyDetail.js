@@ -4,11 +4,12 @@ import "./BodyDetail.css";
 
 import DetailSlider from "../DetailSlider/DetailSlider";
 import Table from "../TableDetail/TableDetail";
-function BodyDetail() {
+
+function BodyDetail({ data }) {
   return (
     <div className="body-page">
-      <DetailSlider />
-      <Table />
+      <DetailSlider images={data && data.largeImg} />
+      {/* <Table data = {...data} /> */}
     </div>
   );
 }

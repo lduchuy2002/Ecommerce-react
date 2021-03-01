@@ -43,9 +43,9 @@ function ProductDetail() {
         name={productData ? productData.name : undefined}
         price={productData ? productData.price : undefined}
       />
-      <DetailSliderContext.Provider value={productData && productData}>
-        <BodyDetail />
-      </DetailSliderContext.Provider>
+
+      <BodyDetail data={productData} />
+
       <div className="wrapper-compo">
         <AdjustItem quantity={quantity} handleFunction={adjustQuantity}></AdjustItem>
         <AddToCard />

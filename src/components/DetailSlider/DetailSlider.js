@@ -1,48 +1,31 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./DetailSlider.scss";
-// import LazyLoad from "../../UI/LazyLoad/LazyLoad";
-import DetailContext from "../../context/DetailContext";
+import LazyLoad from "../../UI/LazyLoad/LazyLoad";
 
-function DetailSlider() {
-  const Detail = useContext(DetailContext);
+function DetailSlider({ images }) {
   const [slide, setSlide] = useState(0);
 
   const onSetSlide = state => setSlide(state);
-
   return (
     <div className="detail-slider">
-      <img src={Detail && Detail.largeImg[slide]} alt="image"></img>
+      {images ? <img src={images[slide]} alt="image"></img> : <LazyLoad />}
+
       <div className="detail-slider__params">
-        <img
-          src={Detail && Detail.largeImg[0]}
-          alt="image"
-          onClick={() => onSetSlide(0)}
-          className="detail-slider__params-param"
-          style={{
-            border: slide === 0 && "  2px solid #cb1c22",
-          }}
-        ></img>
-        <img
-          src={Detail && Detail.largeImg[1]}
-          alt="image"
-          onClick={() => onSetSlide(1)}
-          className="detail-slider__params-param"
-          style={{ border: slide === 1 && "  2px solid #cb1c22" }}
-        ></img>
-        <img
-          src={Detail && Detail.largeImg[2]}
-          alt="image"
-          onClick={() => onSetSlide(2)}
-          className="detail-slider__params-param"
-          style={{ border: slide === 2 && "  2px solid #cb1c22" }}
-        ></img>
-        <img
-          src={Detail && Detail.largeImg[3]}
-          alt="image"
-          onClick={() => onSetSlide(3)}
-          className="detail-slider__params-param"
-          style={{ border: slide === 3 && "  2px solid #cb1c22" }}
-        ></img>
+        {images &&
+          images.map((image, index) => {
+            console.log(index);
+            return (
+              <img
+                src={image}
+                alt="image"
+                onClick={() => onSetSlide(index)}
+                className="detail-slider__params-image"
+                style={{
+                  border: slide === `${index}` && "  2px solid #cb1c22",
+                }}
+              ></img>
+            );
+          })}
       </div>
     </div>
   );
