@@ -1,9 +1,9 @@
 import React from "react";
 import "./ProductItem.scss";
 import { Link } from "react-router-dom";
-function ProductItem({ name, smallPicture, price, chip, ram, screenSize, audio, id }) {
+function ProductItem({ name, smallPicture, price, chip, ram, screenSize, audio, id, route }) {
   return (
-    <Link to={`/products/${id}`} style={{ textDecoration: "none" }}>
+    <Link to={`/${route}/${id}`} style={{ textDecoration: "none" }}>
       <div className="product-item">
         <div className="product-item__top">
           <img className="product-item__top--image" src={smallPicture} alt={name}></img>

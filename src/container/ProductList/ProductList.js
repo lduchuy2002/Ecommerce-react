@@ -7,10 +7,9 @@ import ProductItem from "../../components/ProductItem/ProductItem";
 import LoadMore from "../../components/LoadMore/LoadMore";
 
 import { LAPTOP_DATA_LENGTH, BASE_FILTER_VALUE } from "../../constant/StaticConst";
-import ProductApi from "../../api/productApi";
 
-function ProductList() {
-  const [laptopData, setLaptopData] = useState([]);
+function ProductList({ getAll, route }) {
+  const [productData, setProductData] = useState([]);
   const [pageFetch, setPageFetch] = useState(1);
   const [isFilter, setIsFilter] = useState(false);
   const [isSorted, setIsSorted] = useState("");
@@ -19,54 +18,54 @@ function ProductList() {
 
   useEffect(() => {
     try {
-      const dataToSort = laptopData.sort((laptop1, laptop2) =>
+      const dataToSort = productData.sort((product1, product2) =>
         isSorted === "asc"
-          ? laptop1.priceFilter - laptop2.priceFilter
-          : laptop2.priceFilter - laptop1.priceFilter
+          ? product1.priceFilter - product2.priceFilter
+          : product2.priceFilter - product1.priceFilter
       );
-      setLaptopData([...dataToSort]);
+      setProductData([...dataToSort]);
     } catch (error) {
       console.error(`Failed to sort: ${error}`);
     }
   }, [isSorted]);
 
   const handleFilter = value => {
-    const reFetchLapTopData = async () => {
+    const reFetchProductData = async () => {
       setIsFilter(true);
-      const response = await ProductApi.getAll();
+      const response = await getAll();
       const filterResponse = response.filter(laptop => {
         if (value === 30) {
           return laptop.priceFilter >= 26;
         }
         return laptop.priceFilter >= value - BASE_FILTER_VALUE && laptop.priceFilter <= value;
       });
-      setLaptopData(filterResponse);
+      setProductData(filterResponse);
     };
-    reFetchLapTopData();
+    reFetchProductData();
   };
 
   const HandlePageFetch = () => pageFetch <= LAPTOP_DATA_LENGTH && setPageFetch(pageFetch + 1);
 
   useEffect(() => {
-    const fetchLapTopData = async () => {
+    const fetchProductData = async () => {
       try {
         const params = {
           _page: pageFetch,
           _limit: 10,
         };
-        const response = await ProductApi.getAll(params);
-        setLaptopData([...laptopData, ...response]);
+        const response = await getAll(params);
+        setProductData([...productData, ...response]);
       } catch (error) {
         console.error(`Failed to fetch: ${error}`);
       }
     };
-    fetchLapTopData();
+    fetchProductData();
   }, [pageFetch]);
 
   const handleFilterRam = ram => {
     setIsFilter(true);
-    const filterRam = laptopData.filter(laptop => laptop.ram === ram);
-    setLaptopData(filterRam);
+    const filterRam = productData.filter(product => product.ram === ram);
+    setProductData(filterRam);
   };
 
   return (
@@ -77,8 +76,9 @@ function ProductList() {
         handleSort={handleSort}
       ></FilterLaptop>
       <div className="grid">
-        {laptopData.map(item => (
+        {productData.map(item => (
           <ProductItem
+            route={route}
             name={item.name}
             key={item.id}
             smallPicture={item.smallPicture}
