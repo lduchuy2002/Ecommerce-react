@@ -8,6 +8,11 @@
   justify-content: center;
   background-color: #cb1c22;
   color: white;
+  @media (max-width: 400px) {
+    font-size: 14px;
+    width: 150px;
+    height: 40px;
+  }
   .fa-shopping-cart {
     margin-right: 5px;
   }

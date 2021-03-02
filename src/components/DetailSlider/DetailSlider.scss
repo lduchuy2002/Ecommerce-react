@@ -7,6 +7,7 @@
   margin-bottom: 20px;
   align-items: center;
   font-family: "Encode Sans Semi Expanded", sans-serif;
+
   img {
     max-width: 90%;
     animation: appear 2s;
@@ -14,14 +15,18 @@
   }
   &__params {
     display: flex;
-    width: 100%;
+    max-width: 100%;
     justify-content: center;
     margin: auto;
+
     img {
       transition: 0.2s;
       max-width: 100px;
       border: 1px solid rgb(155, 149, 149);
       object-fit: contain;
+      @media (max-width: 500px) {
+        width: 70px;
+      }
     }
     &-image:not(:first-child) {
       margin-left: 4px;

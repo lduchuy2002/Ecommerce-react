@@ -4,6 +4,10 @@
   max-width: 300px;
   margin: 50px 0;
   font-size: 20px;
+  @media (max-width: 400px) {
+    font-size: 11px;
+    margin: 50px 10px;
+  }
   .quantity {
     margin-right: 20px;
     color: #5e5858;
