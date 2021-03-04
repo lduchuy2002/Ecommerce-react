@@ -4,14 +4,25 @@ import "./Login.scss";
 function Login() {
   return (
     <form className="login">
-      <div className="login__account">
-        <label htmlFor="account">Tài khoản</label>
-        <input type="text" placeholder="Số điện thoại/tên tài khoản" name="account" />
-      </div>
-      <div className="login__password">
-        <label htmlFor="password">Tài khoản</label>
-        <input type="password" placeholder="Mật khẩu" name="password" />
-      </div>
+      <table className="login__form">
+        <tr className="login__form--row">
+          <td>
+            <label htmlFor="account">Tài khoản</label>
+          </td>
+          <td>
+            <input type="text" placeholder="Tên tài khoản" name="account" autoComplete="off" />
+          </td>
+        </tr>
+        <tr className="login__form--row">
+          <td>
+            <label htmlFor="password">Mật khẩu</label>
+          </td>
+          <td>
+            <input type="password" placeholder="Mật khẩu" name="password" />
+          </td>
+        </tr>
+      </table>
+
       <button className="login__submit" type="submit">
         Đăng nhập
       </button>

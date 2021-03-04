@@ -1,4 +1,4 @@
-.login {
+.signin {
   height: 100%;
   background-color: whitesmoke;
   width: 500px;
@@ -16,7 +16,7 @@
   }
   &__form {
     font-size: 18px;
-    margin: 10px auto;
+    margin: 8px auto 0 auto;
     border-spacing: 0 5px;
     @media (max-width: 560px) {
       font-size: 13px;
@@ -33,7 +33,7 @@
     padding: 5px 25px;
     float: right;
     border-radius: 5px;
-    margin: 30px 15px 0 0;
+    margin: 20px 15px 5px 0;
     @media (max-width: 560px) {
       font-size: 13px;
     }
