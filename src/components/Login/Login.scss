@@ -1,0 +1,16 @@
+.login {
+  border: 1px solid red;
+  height: 75%;
+  &__account {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      border: 1px solid rgb(190, 186, 186);
+      outline: none;
+      padding: 5px 10px;
+      margin-left: 50px;
+    }
+  }
+}
