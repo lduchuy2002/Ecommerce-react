@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./WrapperModal.scss";
 import Modal from "../../container/Modal/Modal";
 function WrapperModal() {
-  const [isDisplayModal, setDisplayModal] = useState(false);
+  const [isDisplayModal, setDisplayModal] = useState(true);
 
   return (
     <div

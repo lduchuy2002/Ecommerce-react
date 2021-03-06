@@ -3,7 +3,6 @@ import "./App.css";
 
 import Home from "./pages/Home/Home";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
-
 import WrapperModal from "./HOC/WrapperModal/WrapperModal";
 import "./App.css";
 
@@ -14,13 +13,15 @@ function App() {
     <Router>
       <div className="App">
         <Nav></Nav>
-        <WrapperModal content="abc"></WrapperModal>
         <Switch>
           <Route path="/" exact>
             <Home />
           </Route>
           <Route path="/laptops/:id">
             <ProductDetail />
+          </Route>
+          <Route path="/login">
+            <WrapperModal />
           </Route>
         </Switch>
       </div>
