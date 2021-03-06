@@ -1,3 +1,10 @@
+# Run project
+
+1: Cài đặt Nodejs
+2: Mở terminal, cd vào project
+3: Lệnh npm init
+4: Lệnh npm run dev
+
 # Introduce
 
 App có các chức năng render sản phẩm, mua, đăng nhập, đăng kí, xem tin tức, bình luận, tìm kiếm ,
