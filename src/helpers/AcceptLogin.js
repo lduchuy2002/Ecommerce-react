@@ -1,11 +1,8 @@
 import UserApi from "../api/UserApi";
-import getToken from "./getToken";
 
-const AcceptLogin = async () => {
-  const token = getToken();
-  const response = await UserApi.get(token);
-  const newValue = { ...response, isLogin: true };
-  UserApi.turnOnLoginMode(token, newValue);
+const AcceptLogin = async user => {
+  const newValue = { ...user, isLogin: true };
+  UserApi.turnOnLoginMode(user.id, newValue);
 };
 
 export default AcceptLogin;
