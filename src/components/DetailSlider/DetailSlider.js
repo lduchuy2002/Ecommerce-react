@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import "./DetailSlider.scss";
-import LazyLoad from "../../UI/LazyLoad/LazyLoad";
+import React, { useState } from "react"
+import "./DetailSlider.scss"
+import LazyLoad from "../../UI/LazyLoad/LazyLoad"
 
 function DetailSlider({ images }) {
-  const [slide, setSlide] = useState(0);
+  const [slide, setSlide] = useState(0)
 
-  const onSetSlide = state => setSlide(state);
+  const onSetSlide = state => setSlide(state)
   return (
     <div className="detail-slider">
-      {images ? <img src={images[slide]} alt="image"></img> : <LazyLoad />}
+      {images ? <img src={images[slide]} alt="image" /> : <LazyLoad />}
 
       <div className="detail-slider__params">
         {images &&
@@ -21,11 +21,11 @@ function DetailSlider({ images }) {
               style={{
                 border: slide.toString() === `${index}` && "  2px solid #cb1c22",
               }}
-            ></img>
+            />
           ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default DetailSlider;
+export default DetailSlider

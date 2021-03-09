@@ -1,12 +1,12 @@
-import React from "react";
-import "./ProductItem.scss";
-import { Link } from "react-router-dom";
+import React from "react"
+import "./ProductItem.scss"
+import { Link } from "react-router-dom"
 function ProductItem({ name, smallPicture, price, chip, ram, screenSize, audio, id, route }) {
   return (
     <Link to={`/${route}/${id}`} style={{ textDecoration: "none" }}>
       <div className="product-item">
         <div className="product-item__top">
-          <img className="product-item__top--image" src={smallPicture} alt={name}></img>
+          <img className="product-item__top--image" src={smallPicture} alt={name} />
           <span className="product-item__top--badge">Lì xi 1.000.000đ</span>
         </div>
         <div className="product-item__bottom">
@@ -34,7 +34,7 @@ function ProductItem({ name, smallPicture, price, chip, ram, screenSize, audio, 
         <div id="buy">MUA NGAY</div>
       </div>
     </Link>
-  );
+  )
 }
 
-export default ProductItem;
+export default ProductItem

@@ -2400,5 +2400,15 @@
       "priceFilter": 11
     }
   ],
-  "user": []
+  "user": [
+    {
+      "id": "Q2e87267b-00af-8105-5e2e-ebd18880a628",
+      "account": "ldhuy0102",
+      "password": "donalskehan11",
+      "phoneNumber": "0349223365",
+      "cart": [],
+      "isLogin": false,
+      "initTime": "2021-03-09T08:42:37.307Z"
+    }
+  ]
 }

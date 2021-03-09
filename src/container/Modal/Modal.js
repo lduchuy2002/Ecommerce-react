@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+
 import "./Modal.scss";
 
 import Login from "../../components/Login/Login";
 import Signin from "../../components/Signin/Signin";
-function Modal({ display, handleDisplayModal }) {
+
+function Modal({ handleDisplayModal }) {
   const [modalType, setModalType] = useState(0);
 
   const handleModalType = () => (modalType === 1 ? setModalType(0) : setModalType(1));
@@ -11,7 +13,7 @@ function Modal({ display, handleDisplayModal }) {
   return (
     <div className="modal">
       <i className="fas fa-times" onClick={() => handleDisplayModal(false)}></i>
-      <img src="/assets/images/logo.png" className="modal-logo"></img>
+      <img src="/assets/images/logo.png" className="modal-logo" alt="modal-logo"></img>
       <span className="modal-label" onClick={handleModalType}>
         {modalType ? "Đã" : "Chưa"} có tài khoản?
       </span>

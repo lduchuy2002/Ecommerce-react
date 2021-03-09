@@ -11,7 +11,7 @@ function WrapperModal() {
         display: !isDisplayModal && "none",
       }}
     >
-      <Modal display={isDisplayModal} handleDisplayModal={setDisplayModal} />
+      <Modal handleDisplayModal={setDisplayModal} />
     </div>
   );
 }
