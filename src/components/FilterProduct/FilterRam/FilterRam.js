@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import "./FilterRam.scss";
 
+import { FILTER_RAM_LIST } from "../../../constant/StaticList";
+
 function FilterRam({ handleFilterRam }) {
   const ramValueOnChange = useRef(null);
   const debouce = event => {
@@ -14,18 +16,12 @@ function FilterRam({ handleFilterRam }) {
   return (
     <form className="filter-ram" onChange={debouce}>
       <div style={{ fontWeight: "bold", marginLeft: 20 }}>RAM</div>
-      <span className="filter-ram__item">
-        <input type="radio" id="4G" value={"4 GB"} name="ram"></input>
-        <label htmlFor="4G">4G</label>
-      </span>
-      <span className="filter-ram__item">
-        <input type="radio" id="8G" value={"8 GB"} name="ram"></input>
-        <label htmlFor="8G">8G</label>
-      </span>
-      <span className="filter-ram__item">
-        <input type="radio" id="16G" value={"16 GB"} name="ram"></input>
-        <label htmlFor="16G">16G</label>
-      </span>
+      {FILTER_RAM_LIST.map((item, index) => (
+        <span className="filter-ram__item" key={index}>
+          <input type="radio" id={item.value} value={item.search} name="ram"></input>
+          <label htmlFor="4G">{item.value}</label>
+        </span>
+      ))}
     </form>
   );
 }

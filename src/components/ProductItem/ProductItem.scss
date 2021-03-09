@@ -32,6 +32,9 @@ $border: #dee2e6;
       font-weight: 600;
       color: whitesmoke;
       border-radius: 5px;
+      @media (max-width: 600px) {
+        font-size: 10px;
+      }
     }
   }
 
@@ -42,6 +45,10 @@ $border: #dee2e6;
       max-width: 90%;
       margin: 5px auto 5px auto;
       color: #474c51;
+      @media (max-width: 600px) {
+        font-size: 13px;
+        color: #2a2a2b;
+      }
     }
     &--price {
       background-color: $badge-color;
@@ -54,6 +61,9 @@ $border: #dee2e6;
       margin: 10px 0 15px 0;
       display: inline-block;
       position: relative;
+      @media (max-width: 600px) {
+        font-size: 15px;
+      }
       &:after {
         content: "đ";
         top: 0;
@@ -70,6 +80,9 @@ $border: #dee2e6;
       color: #4a5157;
       .param {
         margin: 0 7px 7px 7px;
+        @media (max-width: 600px) {
+          font-size: 12px;
+        }
         i {
           margin-right: 5px;
         }
@@ -88,6 +101,9 @@ $border: #dee2e6;
     color: whitesmoke;
     display: none;
     transition: 0.5s;
+    @media (max-width: 600px) {
+      font-size: 15px;
+    }
     &:hover {
       background-color: #992529;
     }

@@ -63,6 +63,7 @@ function ProductList({ getAll, route, DATA_LENGTH }) {
   }, [pageFetch]);
 
   const handleFilterRam = ram => {
+    console.log(ram);
     setIsFilter(true);
     const filterRam = productData.filter(product => product.ram === ram);
     setProductData(filterRam);

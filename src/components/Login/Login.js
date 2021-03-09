@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "./Login.scss";
 
 import Validate from "../../helpers/Validate";
-import setToken from "../../helpers/setToken";
 import AuthenUser from "../../Authen/AuthenUser";
 
 function Login({ setLogin }) {
@@ -12,7 +11,6 @@ function Login({ setLogin }) {
   const handleSubmitLogin = async event => {
     event.preventDefault();
     if (Validate.account(account) && Validate.password(password)) {
-      setToken(account, password);
       const checkLogin = await AuthenUser(account, password);
       if (checkLogin) {
         setLogin(true);
