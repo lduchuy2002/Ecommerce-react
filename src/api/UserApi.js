@@ -22,12 +22,8 @@ const UserApi = {
   },
   findToken: async (account, password) => {
     const response = await axiosClient.get(BASE_USER_URL);
-    const user = response.find(user => {
-      if (user.account === account && user.password === password) {
-        return user;
-      }
-    });
-    return user.id;
+    const user = response.find(user => user.account === account);
+    return user;
   },
 };
 
