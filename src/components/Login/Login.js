@@ -1,17 +1,25 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-import "./Login.scss"
-import Validate from "../../helpers/Validate"
+import "./Login.scss";
 
-function Login() {
-  const [account, setAccount] = useState("")
-  const [password, setPassword] = useState("")
+import Validate from "../../helpers/Validate";
+import setToken from "../../helpers/setToken";
+import AuthenUser from "../../Authen/AuthenUser";
+
+function Login({ setLogin }) {
+  const [account, setAccount] = useState("");
+  const [password, setPassword] = useState("");
   const handleSubmitLogin = async event => {
-    event.preventDefault()
+    event.preventDefault();
     if (Validate.account(account) && Validate.password(password)) {
-      console.log("success")
+      setToken(account, password);
+      const checkLogin = await AuthenUser(account, password);
+      if (checkLogin) {
+        setLogin(true);
+      }
     }
-  }
+  };
+
   return (
     <div className="login">
       <table className="login__form">
@@ -50,7 +58,7 @@ function Login() {
         Đăng nhập
       </button>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;

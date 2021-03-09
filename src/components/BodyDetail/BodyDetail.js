@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import "./BodyDetail.css";
 
 import AdjustItem from "../AdjustItem/AdjustItem";
