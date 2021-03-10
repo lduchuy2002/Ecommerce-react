@@ -1,11 +1,11 @@
-import React, { useState } from "react"
-import "./DetailSlider.scss"
-import LazyLoad from "../../UI/LazyLoad/LazyLoad"
+import React, { useState } from "react";
+import "./DetailSlider.scss";
+import LazyLoad from "../../UI/LazyLoad/LazyLoad";
 
 function DetailSlider({ images }) {
-  const [slide, setSlide] = useState(0)
+  const [slide, setSlide] = useState(0);
 
-  const onSetSlide = state => setSlide(state)
+  const onSetSlide = state => setSlide(state);
   return (
     <div className="detail-slider">
       {images ? <img src={images[slide]} alt="image" /> : <LazyLoad />}
@@ -18,6 +18,7 @@ function DetailSlider({ images }) {
               alt="image"
               onClick={() => onSetSlide(index)}
               className="detail-slider__params-image"
+              key={index}
               style={{
                 border: slide.toString() === `${index}` && "  2px solid #cb1c22",
               }}
@@ -25,7 +26,7 @@ function DetailSlider({ images }) {
           ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default DetailSlider
+export default DetailSlider;
