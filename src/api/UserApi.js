@@ -17,7 +17,7 @@ const UserApi = {
   get: id => {
     return axiosClient.get(`${BASE_USER_URL}/${id}`);
   },
-  turnOnLoginMode: (id, newValue) => {
+  updateUser: (id, newValue) => {
     axios.put(`${BASE_USER_URL}/${id}`, newValue);
   },
   findToken: async (account, password) => {
