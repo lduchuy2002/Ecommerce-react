@@ -11,8 +11,9 @@ $filter-font-size: 17px;
   font-weight: 700;
   font-family: "Encode Sans Semi Expanded", sans-serif;
   @media (max-width: 800px) {
-    font-size: 1rem;
+    font-size: 8px;
   }
+
   &__list {
     list-style: none;
     display: flex;
@@ -24,6 +25,9 @@ $filter-font-size: 17px;
       &-sort {
         @media (max-width: 600px) {
           width: 100px;
+        }
+        @media (max-width: 800px) {
+          font-size: 8px;
         }
       }
       @media (max-width: 600px) {
