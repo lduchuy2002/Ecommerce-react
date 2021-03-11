@@ -76,7 +76,6 @@
     @media (max-width: 600px) {
       & {
         flex-direction: column;
-        border: 1px solid red;
         width: 50vw;
         height: 100vh;
         position: fixed;
@@ -85,7 +84,6 @@
         background-color: #202020;
         color: white;
         transition: 0.5s ease-out;
-
         .close-icon {
           position: absolute;
           display: inline-block;
@@ -124,11 +122,11 @@
   }
 }
 
-@media (max-width: 1067px) {
+@media (max-width: 1075px) {
   .nav {
     flex-direction: column;
     & > * {
-      margin: 10px 0 0 0;
+      margin: 0;
     }
   }
 }

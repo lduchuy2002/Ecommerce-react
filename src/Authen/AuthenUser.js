@@ -1,5 +1,6 @@
 import AcceptLogin from "../helpers/AcceptLogin";
 import UserApi from "../api/UserApi";
+
 async function AuthenUser(account, password) {
   const user = await UserApi.findToken(account);
   if (user) {

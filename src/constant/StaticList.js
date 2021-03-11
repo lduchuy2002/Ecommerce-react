@@ -10,7 +10,7 @@ export const BANNER_IMAGES = [
 export const FILTER_RAM_LIST = [
   { value: "4G", search: "4 GB" },
   { value: "8G", search: "8 GB" },
-  { value: "16G", search: "16GB" },
+  { value: "16G", search: "16 GB" },
 ];
 
 export const FILTER_PRICE_LIST = [

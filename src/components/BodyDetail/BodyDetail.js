@@ -26,19 +26,20 @@ function BodyDetail({ data }) {
 
   const onAddToCart = async () => {
     const token = getToken();
-    //Đoạn này code ơi củ chuối
     if (token) {
       const user = await AuthenToken(token);
       if (user) {
         const alreadyInCart = user.cart.find(product => product.item === id);
         if (alreadyInCart) {
+          // this still is a references param
           alreadyInCart.quantity += quantity;
         } else {
           user.cart.push({ item: id, quantity: quantity });
         }
         UserApi.updateUser(token, user);
+        alert("Đã thêm vào giỏ hàng");
       }
-    }
+    } else alert("Bạn chưa đăng nhập");
   };
 
   return (
@@ -47,7 +48,6 @@ function BodyDetail({ data }) {
         <DetailSlider images={data && data.largeImg} />
         <Table data={data} />
       </div>
-
       <div className="wrapper-compo">
         <AdjustItem quantity={quantity} handleFunction={adjustQuantity}></AdjustItem>
         <AddToCard onAddToCart={onAddToCart} />
