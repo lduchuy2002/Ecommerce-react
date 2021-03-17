@@ -1,9 +1,9 @@
 import React from "react";
 import "./AdjustItem.scss";
 
-export default function AdjustItem({ quantity, handleFunction }) {
+export default function AdjustItem({ quantity, handleFunction, style }) {
   return (
-    <div className="adjust-item">
+    <div className="adjust-item" style={style}>
       <span className="quantity">Số lượng</span>
       <span className="adjust-item__decrease" onClick={() => handleFunction("-")}>
         <i className="fas fa-minus"></i>

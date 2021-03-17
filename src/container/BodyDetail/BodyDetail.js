@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./BodyDetail.css";
 
-import AdjustItem from "../AdjustItem/AdjustItem";
-import AddToCard from "../AddToCart/AddToCart";
-import DetailSlider from "../DetailSlider/DetailSlider";
-import Table from "../TableDetail/TableDetail";
+import AdjustItem from "../../components/AdjustItem/AdjustItem";
+import AddToCard from "../../components/AddToCart/AddToCart";
+import DetailSlider from "../../components/DetailSlider/DetailSlider";
+import Table from "../../components/TableDetail/TableDetail";
 
 import AuthenToken from "../../Authen/AuthenToken";
 import getToken from "../../helpers/getToken";

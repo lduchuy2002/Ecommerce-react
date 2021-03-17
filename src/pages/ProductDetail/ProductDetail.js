@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "./ProductDetail.scss";
 
 import TopDetail from "../../components/TopDetail/TopDetail";
-import BodyDetail from "../../components/BodyDetail/BodyDetail";
+import BodyDetail from "../../container/BodyDetail/BodyDetail";
 
 import ProductApi from "../../api/productApi";
 
@@ -25,14 +25,14 @@ function ProductDetail() {
   }, []);
 
   return (
-    <div className="container">
+    <section className="container">
       <TopDetail
         name={productData ? productData.name : undefined}
         price={productData ? productData.price : undefined}
       />
 
       <BodyDetail data={productData} />
-    </div>
+    </section>
   );
 }
 

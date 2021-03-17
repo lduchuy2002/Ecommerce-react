@@ -24,9 +24,9 @@ function WrapperModal() {
     autoLogin();
   }, []);
   return (
-    <div className="wrapper-modal">
+    <section className="wrapper-modal">
       <Modal handleDisplayModal={handleDisplayModal} isLogin={isLogin} setLogin={setLogin} />
-    </div>
+    </section>
   );
 }
 

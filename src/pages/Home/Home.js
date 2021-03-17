@@ -8,7 +8,7 @@ import { ROUTE_LAPTOP, LAPTOP_DATA_LENGTH } from "../../constant/StaticConst";
 
 function Home() {
   return (
-    <div className="Home">
+    <section className="Home">
       <HeadBanner SliderList={BANNER_IMAGES} BannerClock={BannerClock}></HeadBanner>
 
       <ProductList
@@ -16,7 +16,7 @@ function Home() {
         route={ROUTE_LAPTOP}
         DATA_LENGTH={LAPTOP_DATA_LENGTH}
       ></ProductList>
-    </div>
+    </section>
   );
 }
 

@@ -15,7 +15,7 @@ function DetailSlider({ images }) {
           images.map((image, index) => (
             <img
               src={image}
-              alt="image"
+              alt={image}
               onClick={() => onSetSlide(index)}
               className="detail-slider__params-image"
               key={index}

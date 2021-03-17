@@ -43,7 +43,7 @@ function FilterLaptop({ handleFilter, handleSort, handleFilterRam }) {
               <option className="sort-item" value="asc">
                 Giá thấp đến cao
               </option>
-              <option className="sort-item" value="des">
+              <option className="sort-item" value="des" selected>
                 Giá cao đến thấp
               </option>
             </select>

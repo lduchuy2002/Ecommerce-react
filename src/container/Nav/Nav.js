@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import "./Nav.scss"
-import { Link } from "react-router-dom"
+import React, { useState } from "react";
+import "./Nav.scss";
+import { Link } from "react-router-dom";
 
 function Nav() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   return (
     <div className="container">
       <div className="nav">
@@ -26,8 +26,8 @@ function Nav() {
             </Link>
           </li>
           <li className="nav__menu--item">
-            <Link to="/phone" style={{ textDecoration: "none", color: "inherit" }}>
-              ĐIỆN THOẠI
+            <Link to="/cart" style={{ textDecoration: "none", color: "inherit" }}>
+              GIỎ HÀNG
             </Link>
           </li>
           <li className="nav__menu--item">
@@ -55,7 +55,7 @@ function Nav() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Nav
+export default Nav;

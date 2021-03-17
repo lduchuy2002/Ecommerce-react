@@ -1,0 +1,114 @@
+$S1075: 1075px;
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  justify-content: space-between;
+  margin: 10px auto;
+  border: 1px solid lightgrey;
+  height: 100px;
+  animation: 1s cart backwards;
+  @media (max-width: $S1075) {
+    max-width: 720px;
+    height: 80px;
+  }
+  @media (max-width: 760px) {
+    max-width: 550px;
+    height: 150px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 400px) {
+    max-width: 360px;
+  }
+  @media (max-width: 600px) {
+    max-width: 400px;
+    height: 130px;
+    flex-wrap: wrap;
+    flex-direction: flex-start;
+  }
+  .text-wrapper {
+    display: flex;
+    align-items: center;
+    @media (max-width: $S1075) {
+      flex-direction: column;
+    }
+  }
+  %border {
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+  }
+  &__image {
+    width: 8%;
+    @media (max-width: 850px) {
+      width: 12%;
+    }
+    @media (max-width: 750px) {
+      width: 20%;
+    }
+  }
+  &__title {
+    display: block;
+    font-size: 14px;
+    padding: 10px 10px;
+    width: 350px;
+    @media (max-width: $S1075) {
+      width: 250px;
+      padding: 0;
+      font-size: 11px;
+    }
+    @extend %border;
+  }
+  .price-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @extend %border;
+    padding: 0 10px;
+  }
+  &__unit-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #cb1c22;
+  }
+  &__old-price {
+    font-size: 13px;
+    color: rgb(133, 133, 133);
+    text-decoration: line-through;
+  }
+  &__total-price {
+    font-size: 17px;
+    font-weight: bold;
+    color: #cb1c22;
+    @extend %border;
+    padding: 0 10px;
+    @media (max-width: $S1075) {
+      display: none;
+    }
+  }
+  .fa-trash-alt {
+    font-size: 14px;
+    margin-right: 50px;
+    @media (max-width: $S1075) {
+      margin-right: 5px;
+    }
+  }
+  &__quantity {
+    width: 100px;
+    font-size: 16px;
+    @extend %border;
+    padding: 0 5px;
+  }
+}
+
+@keyframes cart {
+  0% {
+    transform: translateX(40%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
