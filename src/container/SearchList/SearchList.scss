@@ -1,0 +1,29 @@
+.search-list {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  z-index: 3;
+  height: 500px;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    align-items: center;
+    font-size: 13px;
+    max-width: 400px;
+    background-color: whitesmoke;
+    text-overflow: ellipsis;
+
+    &--img {
+      width: 60px;
+    }
+  }
+}
+
+.search-wrapper {
+  position: relative;
+}

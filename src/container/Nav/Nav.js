@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+
 import "./Nav.scss";
 import { Link } from "react-router-dom";
 
+import SearchList from "../SearchList/SearchList";
+
 function Nav() {
   const [open, setOpen] = useState(false);
+
   return (
     <div className="container">
       <div className="nav">
@@ -36,22 +40,13 @@ function Nav() {
             </Link>
           </li>
           <li className="nav__menu--item">
-            <Link to="/about" style={{ textDecoration: "none", color: "inherit" }}>
-              LIÊN HỆ
+            <Link to="/login" style={{ textDecoration: "none", color: "inherit" }}>
+              ĐĂNG NHẬP
             </Link>
           </li>
         </ul>
         <div className="nav__search-bar">
-          <i
-            className="fas fa-search"
-            style={{
-              borderRight: "1px solid black",
-              paddingRight: "5px",
-              fontSize: "20px",
-              cursor: "pointer",
-            }}
-          ></i>
-          <input className="search" />
+          <SearchList />
         </div>
       </div>
     </div>
